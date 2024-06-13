@@ -1,0 +1,6 @@
+{% extends 'article_app/base.html' %}
+{% block content %}
+<h2>Article created successfully!</h2>
+
+<a href="{% url 'article_app:article_list' %}">List of Articles</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'article_app/base.html' %}
+{% block content %}
+<ol>
+    {% for article in articles %}
+    <li>
+        <h4>{{ article.title }}</h4>
+        <p>{{ article.article }}</p>
+        <p>Created by: {{ article.created_by }}</p>
+        <p>Likes: {{ article.likes }}</p>
+        <form action="{% url 'article_app:like_article' article.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Like</button>
+        </form>
+        <a href="{% url 'article_app:edit_article' article.pk %}">Edit</a>
+    </li>
+    {% endfor %}
+</ol>
+{% endblock %}
