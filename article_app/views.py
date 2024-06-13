@@ -78,4 +78,4 @@ class ArticleUpdateView(UpdateView):
     model = Article
     form_class = ArticleForm
     template_name = "article_app/article_form.html"
-    success_url = reverse_lazy("article_app:articles_list")
+    success_url = reverse_lazy("article_app:article_list")
